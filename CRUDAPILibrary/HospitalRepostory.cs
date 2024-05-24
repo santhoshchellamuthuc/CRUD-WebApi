@@ -12,13 +12,25 @@ namespace CRUDAPILibrary
     public class HospitalRepostory
     {
         IConfiguration _configurestion;
+
+        string connectionstring = string.Empty;
         public HospitalRepostory(IConfiguration configurestion)
         {
 
             _configurestion = configurestion;
-            var a = _configurestion.GetConnectionString("DbConnection");
-
+            connectionstring = _configurestion.GetConnectionString("DbConnection");
         }
+    }
+    public  void Login(HospitalDetails value)
+    {
+        try
+        {
+            var insert = $"Insert into HospitalDetails values('{value.Name}','{value.Email}','{value.Address}',{value.Phonenumber},{value.Pincode})";
+            connectionstring.open();
+            connectionstring.Execute(HospitalDetails);
+            connectionstring.close()
+        }
+
     }
 }
 
