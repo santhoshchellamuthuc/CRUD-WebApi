@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace CRUDAPILibrary
+namespace DapperData
 {
     public class HospitalDetails
     {

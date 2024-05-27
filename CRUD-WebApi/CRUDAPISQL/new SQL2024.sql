@@ -65,7 +65,7 @@ select *from [HospitalDetails]
  Name like'%'+@Name+'%'or
  Email like'%'+@Name+'%'or
  Address like '%'+@Name+'%' or
- phoneNumber like'%'+@Name+'%' or
+ Phonenumber like'%'+@Name+'%' or
  Pincode like'%'+@Name+'%' end
 
  -- exec HospitalSearch 909099090
