@@ -53,7 +53,8 @@ select *from [HospitalDetails]
  As
  begin Delete  HospitalDetails where Id=@Id end
 
- --exec HospitalDelete 2
+
+ --exec HospitalDelete 2----------------------------------------------------------------------------------------------------------------------
  select *from HospitalDetails
 
  create or alter procedure HospitalSearch

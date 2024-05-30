@@ -28,9 +28,9 @@ namespace CRUD_WebApi.Controllers
 
         // GET api/<HospitalController>/5
         [HttpGet("{Serching}")]
-        public string Get(  string set)
+        public IEnumerable<HospitalDetails> Get( string name)
         {
-            return refer.HospitalSearch(set);
+            return refer.Hospitalsearch(name);
         }
 
         // POST api/<HospitalController>
@@ -41,15 +41,17 @@ namespace CRUD_WebApi.Controllers
         }
 
         // PUT api/<HospitalController>/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
+        [HttpPut("{Edit}")]
+        public void Put(long Id,string name, [FromBody] HospitalDetails value)
         {
+            refer.HospitalEdit(Id, name);
         }
 
         // DELETE api/<HospitalController>/5
-        [HttpDelete("{id}")]
+        [HttpDelete("{Id}")]
         public void Delete(int id)
         {
+            refer.HospitalRemove(id);
         }
     }
 }
